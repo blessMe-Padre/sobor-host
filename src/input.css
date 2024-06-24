@@ -1,0 +1,218 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+
+/* Импорт кастомных стилей для компонентов */
+@import './block/button.css';
+@import './block/menu-button.css';
+@import './block/menu.css';
+@import './block/swiper.css';
+@import './block/sliders.css';
+@import './block/scrool-top.css';
+@import './block/header.css';
+@import './block/social-icon.css';
+@import './block/hero.css';
+@import './block/title.css';
+@import './block/news.css';
+@import './block/time.css';
+@import './block/footer.css';
+@import './block/calendar.css';
+@import './block/animate.css';
+
+
+/* Импорт TailWind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Зарегистрируйте пользовательское семейство шрифтов и сообщите браузеру, где его найти. */
+/* @font-face {
+    font-family: 'archangelsk';
+    src: url('../src/fonts/archangelsk.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+/* Директивы data-scroll */
+[data-scroll] {
+    transition: opacity 1s
+}
+
+[data-scroll=in] {
+    opacity: 1
+}
+
+[data-scroll=out] {
+    opacity: 0
+}
+
+:root {
+    --main-black: #303030;
+    --default-black: #000000;
+    --brown: #D8D2C2;
+    --light-brown: #EDEBE5;
+    --dark-brown: #A99F8A;
+    --orange: #DBBA61;
+    --white: #ffffff;
+}
+
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Onest", sans-serif;
+        color: #303030;
+        background: linear-gradient(166deg, #FFF 5.27%, rgba(255, 255, 255, 0.00) 78.75%);
+        font-weight: 400;
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-[1440px]
+    }
+}
+
+/* Директивы классов */
+
+.link {
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--orange);
+}
+
+/* Прочие классы */
+.lock {
+    overflow: hidden;
+}
+
+.lock-before::before {
+    overflow: hidden;
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: all;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.lock-before.is-active::before {
+    opacity: 1;
+    z-index: 17;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    z-index: 1;
+}
+
+.noise.is-active {
+    z-index: 18;
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.decor-section {
+    height: 105px;
+    background-image: url('../src/img/bg/1.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-top: -250px;
+}
+
+.decor-section-2 {
+    height: 105px;
+    background-image: url('../src/img/bg/2.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-top: 0;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 110px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--brown);
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: var(--orange);
+}
+
+.swiper-button-prev:hover img,
+.swiper-button-next:hover img {
+    transition: transform 0.3s ease;
+}
+
+.swiper-button-prev:hover img {
+    transform: translateX(-5px);
+}
+
+.swiper-button-next:hover img {
+    transform: translateX(5px);
+}
+
+.image-wrapper {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .decor-section {
+        display: none;
+    }
+}
