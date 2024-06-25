@@ -10,16 +10,13 @@
                 </p>
             </div>
 
-            <ul class="footer__list">
-                <li><a href="#">О храме</a></li>
-                <li><a href="#">История храма</a></li>
-                <li><a href="#">События</a></li>
-                <li><a href="#">Требы</a></li>
-                <li><a href="#">Библиотека</a></li>
-                <li><a href="#">Воскресная школа</a></li>
-                <li><a href="#">Социальное служение</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
+            <?php wp_nav_menu([
+                'theme_location' => 'main',
+                'container' => '',
+                'menu_class' => 'footer__list',
+                'menu_id' => ''
+            ]);
+            ?>
 
             <div class="footer__contact">
                 <div class="flex xs:flex-col">
@@ -57,11 +54,11 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?php echo get_template_directory_uri() ?>/js/wow.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri() ?>/js/wow.js"></script> -->
 <!-- <script src="<?php echo get_template_directory_uri() ?>/js/baguettebox.js"></script> -->
-<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script src="<?php echo get_template_directory_uri() ?>/js/swiper-bundle.min.js"></script>
-<script type="module" src="<?php echo get_template_directory_uri() ?>/js/main.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+<!-- <script src="<?php echo get_template_directory_uri() ?>/js/swiper-bundle.min.js"></script> -->
+<!-- <script type="module" src="<?php echo get_template_directory_uri() ?>/js/main.js"></script> -->
 </body>
 
 </html>

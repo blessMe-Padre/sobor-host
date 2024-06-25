@@ -16,33 +16,36 @@ get_header();
                 <div class="hero-swiper swiper">
 
                     <ul class="swiper-wrapper justify-items-stretch">
+                    <?php
+                    $my_posts = get_posts(
+                        array(
+                            'numberposts' => -1,
+                            'category' => '3',
+                            'orderby' => 'title',
+                            'order' => 'ASC',
+                            'post_type' => 'events',
+                            'suppress_filters' => true,
+                        )
+                    );
+
+                    foreach ($my_posts as $post) {
+                        setup_postdata($post);
+                        ?>
+
                         <li class="swiper-slide hero__item">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/hero-img.webp" width="1440"
-                                height="600" alt="img">
+                        <?php the_post_thumbnail(''); ?>
                             <div class="hero__block">
-                                <p class="text-light-gray mb-3">3 марта 2024 года</p>
-                                <h2 class="title mb-5 wow fadeInUp">Неделя о блудном сыне</h2>
-                                <p class="mb-6 hero__text wow fadeInDown" data-wow-delay="1s">В Покровском храме была
-                                    совершена Божественная литургия В Покровском храме была совершена Божественная
-                                    литургия Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore debitis
-                                    obcaecati, id iure error harum consectetur nam aspernatur dignissimos et.
-                                    Божественная литургия В Покровском храме была совершена Божественная литургия Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Inventore debitis obcaecati, id
-                                    iure error harum consectetur nam aspernaturБожественная литургия В Покровском храме
-                                    была совершена Божественная литургия Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Inventore debitis obcaecati, id iure error harum consectetur nam
-                                    aspernatur</p>
-                                <a class="text-orange underline" href="#">Читать</a>
+                                <p class="text-light-gray mb-3"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
+                                <h2 class="mb-5 wow fadeInUp"><?php the_title(); ?></h2>
+                                <div class="mb-6 hero__text wow fadeInDown" data-wow-delay="1s"><?php the_excerpt(); ?></div>
+                                <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
                             </div>
                         </li>
-                        <li class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/hero-img.webp" width="1440"
-                                height="600" alt="img">
-                        </li>
-                        <li class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/hero-img.webp" width="1440"
-                                height="600" alt="img">
-                        </li>
+                        <?php
+                    }
+                    wp_reset_postdata();
+                    ?>
+                        
                     </ul>
 
                 </div>

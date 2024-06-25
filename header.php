@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <title>Храм Покрова Пресвятой Богородицы</title>
+    <title>Храм Покрова | <?php the_title(); ?></title>
     <link rel="stylesheet" href="css/animate.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -28,9 +28,11 @@
                     <p class="text-xs md:text-lg font-bold">г. Владивосток, Океанский проспект, 44</p>
                     <p class="text-xs md:text-lg">Пн-Сб: 08:00 - 19:00</p>
                 </div>
-                <img class="header__logo" loading="lazy"
+                <a href="/">
+                    <img class="header__logo" loading="lazy"
                     src="<?php echo get_template_directory_uri() ?>/src/img/logo.svg" width="367" height="105"
                     alt="лого">
+                </a>
                 <div class="flex items-center justify-center gap-7">
                     <a class="text-xs md:text-lg font-bold link" href="tel:+74232402628">8 (423) 2-40-26-28</a>
                     <div class="hidden xs:flex items-center gap-3">
@@ -49,32 +51,26 @@
             </div>
             <div class="container">
                 <nav class="header__nav">
-                    <ul>
-                        <li><a class="link" href="#">О храме</a></li>
-                        <li><a class="link" href="#">История храма</a></li>
-                        <li><a class="link" href="#">События</a></li>
-                        <li><a class="link" href="#">Требы</a></li>
-                        <li><a class="link" href="#">Библиотека</a></li>
-                        <li><a class="link" href="#">Воскресная школа</a></li>
-                        <li><a class="link" href="#">Социальное служение</a></li>
-                        <li><a class="link" href="#">Контакты</a></li>
-                    </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'main',
+                    'container' => '',
+                    'menu_class' => '',
+                    'menu_id' => ''
+                ]);
+                ?>
                 </nav>
             </div>
 
             <!-- мобильное меню -->
             <div class="flex flex-col items-start justify-between overflow-hidden md:hidden">
                 <div class="mobile-menu">
-                    <ul class="mt-8">
-                        <li><a class="link" href="#">О храме</a></li>
-                        <li><a class="link" href="#">История храма</a></li>
-                        <li><a class="link" href="#">События</a></li>
-                        <li><a class="link" href="#">Требы</a></li>
-                        <li><a class="link" href="#">Библиотека</a></li>
-                        <li><a class="link" href="#">Воскресная школа</a></li>
-                        <li><a class="link" href="#">Социальное служение</a></li>
-                        <li><a class="link" href="#">Контакты</a></li>
-                    </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'main',
+                    'container' => '',
+                    'menu_class' => '',
+                    'menu_id' => ''
+                ]);
+                ?>
                     <div>
                         <p class="text-lg font-bold">г. Владивосток, Океанский проспект, 44</p>
                         <p class="mb-5">Пн-Сб: 08:00 - 19:00</p>

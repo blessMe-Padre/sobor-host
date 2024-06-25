@@ -3,6 +3,9 @@
 // правильный способ подключить стили и скрипты темы
 add_action('wp_enqueue_scripts', 'theme_add_scripts');
 
+// подключение и настройка меню через админку
+add_action('after_setup_theme', 'add_menu');
+
 // добавляет возможность выбрать кастомныи лого из админки
 add_theme_support('custom-logo');
 
@@ -13,7 +16,7 @@ add_theme_support('custom-logo');
 // add_action('after_setup_theme', 'add_menu');
 
 // добавляет возможность выбрать img у записи(post) из админки
-add_theme_support('post-thumbnails', array('post'));
+add_theme_support('post-thumbnails', array('post', 'events'));
 
 
 function theme_add_scripts()
@@ -29,11 +32,44 @@ function theme_add_scripts()
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
-    // подключаем js файл baguetteBox
-    // wp_enqueue_script('baguetteBox', get_template_directory_uri() .
-    //     '/js/baguettebox.js', false, null, 'footer');
+    // подключаем js файл swiper-bundle.min.js
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-latest.min.js', false, null, 'footer');
 
     // подключаем js файл swiper-bundle.min.js
-    // wp_enqueue_script('swiper', get_template_directory_uri() .
-    //     '/js/swiper-bundle.min.js', false, null, 'footer');
+    wp_enqueue_script('swiper', get_template_directory_uri() .
+        '/js/swiper-bundle.min.js', false, null, 'footer');
+
+    // подключаем js файл swiper-bundle.min.js
+    wp_enqueue_script('wow', get_template_directory_uri() .
+        '/js/wow.js', false, null, 'footer');
+
+    wp_enqueue_script_module('main', get_template_directory_uri() . '/js/main.js', array(), '0.0.12');
+}
+
+function add_menu()
+{
+    register_nav_menu('main', 'главное меню сайта');
+}
+
+// Добавляет вкладку "События" для меню админки Wordpress"
+add_action('init', 'create_post_type');
+function create_post_type()
+{
+    register_post_type(
+        'events',
+        array(
+            'public' => true,
+            'has_archive' => true,
+            'exclude_from_search' => true,
+            'publicly_queryable' => true,
+            'labels' => array(
+                'name' => 'События',
+                'singular_name' => 'События',
+                'menu_name' => 'События',
+                'all_items' => 'Все события',
+            ),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', 'excerpt'),
+            'taxonomies' => array('category'),
+        )
+    );
 }
