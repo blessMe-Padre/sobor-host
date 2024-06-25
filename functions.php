@@ -25,7 +25,7 @@ function theme_add_scripts()
     // wp_enqueue_style('baguetteBox-css', get_template_directory_uri() . '/css/baguetteBox.min.css');
 
     // подключаем файл animate.css
-    // wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.min.css');
+    wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.css');
 
     // подключаем основной файл стилей темы
     wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.1');

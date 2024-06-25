@@ -2597,3 +2597,39 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.page-content p {
+    margin-bottom: 20px;
+}
+
+.page-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 30px 0;
+}
+
+.page-content img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.lib-content {
+    margin-bottom: 40px;
+}
+
+.lib-content__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.lib-content__description h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+@media (max-width: 580px) {
+    .lib-content__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
