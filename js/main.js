@@ -6,6 +6,7 @@ import { initScrollAnimation } from "./module/scroll-animation.js";
 import { initScroll } from "./module/scroll.js";
 import { initCalendar } from "./module/calendar.js";
 import { initAnimation } from "./module/animation.js";
+import { initMask } from "./module/phone-mask.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -17,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initScrollAnimation();
     initScroll();
     initAnimation();
+    initMask();
 
     if (document.querySelector('.calendar')) {
         initCalendar();

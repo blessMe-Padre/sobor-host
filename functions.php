@@ -16,7 +16,7 @@ add_theme_support('custom-logo');
 // add_action('after_setup_theme', 'add_menu');
 
 // добавляет возможность выбрать img у записи(post) из админки
-add_theme_support('post-thumbnails', array('post', 'events'));
+add_theme_support('post-thumbnails', array('post', 'events', 'news'));
 
 
 function theme_add_scripts()
@@ -67,6 +67,29 @@ function create_post_type()
                 'singular_name' => 'События',
                 'menu_name' => 'События',
                 'all_items' => 'Все события',
+            ),
+            'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', 'excerpt'),
+            'taxonomies' => array('category'),
+        )
+    );
+}
+
+// Добавляет вкладку "Новости" для меню админки Wordpress"
+add_action('init', 'create_post_type2');
+function create_post_type2()
+{
+    register_post_type(
+        'news',
+        array(
+            'public' => true,
+            'has_archive' => true,
+            'exclude_from_search' => true,
+            'publicly_queryable' => true,
+            'labels' => array(
+                'name' => 'Новости',
+                'singular_name' => 'Новости',
+                'menu_name' => 'Новости',
+                'all_items' => 'Новости',
             ),
             'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', 'excerpt'),
             'taxonomies' => array('category'),

@@ -32,22 +32,20 @@ get_header();
                         setup_postdata($post);
                         ?>
 
-                        <li class="swiper-slide hero__item">
-                        <?php the_post_thumbnail(''); ?>
-                            <div class="hero__block">
-                                <p class="text-light-gray mb-3"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
-                                <h2 class="mb-5 wow fadeInUp"><?php the_title(); ?></h2>
-                                <div class="mb-6 hero__text wow fadeInDown" data-wow-delay="1s"><?php the_excerpt(); ?></div>
-                                <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
-                            </div>
-                        </li>
-                        <?php
+            <li class="swiper-slide hero__item">
+            <?php the_post_thumbnail(''); ?>
+            <div class="hero__block">
+            <p class="text-light-gray mb-3"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
+            <h2 class="title mb-5 wow fadeInUp"><?php the_title(); ?></h2>
+            <div class="mb-6 hero__text wow fadeInDown" data-wow-delay="1s"><?php the_excerpt(); ?></div>
+            <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
+            </div>
+            </li>
+            <?php
                     }
                     wp_reset_postdata();
                     ?>
-                        
                     </ul>
-
                 </div>
             </div>
         </div>
@@ -78,47 +76,37 @@ get_header();
                 <div class="w-0 min-w-full relative">
                     <div class="news-swiper swiper">
                         <ul class="swiper-wrapper justify-items-stretch news__list">
-                            <li class="swiper-slide news__item wow fadeIn" data-wow-delay="1s">
-                                <div>
-                                    <div class="image-wrapper mb-5">
-                                        <img src="<?php echo get_template_directory_uri() ?>/src/img/image-1.jpg"
-                                            height="460" width="350" alt="image">
-                                    </div>
-                                    <p class="mb-5 text-light-gray">3 марта 2024 года</p>
-                                    <h3>Богослужение в день памяти священномученика Павла Лазарева</h3>
-                                    <p class="news__description">2 июня, в Неделю 5-ю по Пасхе, о самаряныне, день
-                                        памяти священномученика Павла Лазарева...</p>
-                                </div>
-                                <a class="text-orange underline" href="#">Читать</a>
-                            </li>
+                        <?php
+                        $my_posts = get_posts(
+                            array(
+                                'numberposts' => -1,
+                                'category' => '4',
+                                'orderby' => 'title',
+                                'order' => 'ASC',
+                                'post_type' => 'news',
+                                'suppress_filters' => true,
+                            )
+                        );
 
-                            <li class="swiper-slide news__item wow fadeIn" data-wow-delay="1.2s">
-                                <div>
-                                    <div class="image-wrapper mb-5">
-                                        <img src="<?php echo get_template_directory_uri() ?>/src/img/image-2.jpg"
-                                            height="460" width="350" alt="image">
-                                    </div>
-                                    <p class="mb-5 text-light-gray">3 марта 2024 года</p>
-                                    <h3>Богослужение в день памяти священномученика Павла Лазарева</h3>
-                                    <p class="news__description">2 июня, в Неделю 5-ю по Пасхе, о самаряныне, день
-                                        памяти священномученика Павла Лазарева...</p>
-                                </div>
-                                <a class="text-orange underline" href="#">Читать</a>
-                            </li>
+                        foreach ($my_posts as $post) {
+                            setup_postdata($post);
+                            ?>
 
-                            <li class="swiper-slide news__item wow fadeIn" data-wow-delay="1.4s">
-                                <div>
-                                    <div class="image-wrapper mb-5">
-                                        <img src="<?php echo get_template_directory_uri() ?>/src/img/image-3.jpg"
-                                            height="460" width="350" alt="image">
-                                    </div>
-                                    <p class="mb-5 text-light-gray">3 марта 2024 года</p>
-                                    <h3>Богослужение в день памяти священномученика Павла Лазарева</h3>
-                                    <p class="news__description">2 июня, в Неделю 5-ю по Пасхе, о самаряныне, день
-                                        памяти священномученика Павла Лазарева...</p>
-                                </div>
-                                <a class="text-orange underline" href="#">Читать</a>
-                            </li>
+            <li class="swiper-slide news__item wow fadeIn" data-wow-delay="1s">
+            <div>
+            <div class="image-wrapper mb-5">
+            <?php the_post_thumbnail(''); ?>
+            </div>
+            <p class="mb-5 text-light-gray"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
+            <h3><?php the_title(); ?></h3>
+            <div class="news__description"><?php the_excerpt(); ?></div>
+            </div>
+            <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
+            </li>
+            <?php
+                        }
+                        wp_reset_postdata();
+                        ?>
                         </ul>
                     </div>
 
@@ -206,7 +194,7 @@ get_header();
                     </div>
 
                     <div class="time__image">
-                        <script async src="https://telegram.org/js/telegram-widget.js?22"
+                        <script async src="<?= get_field('ссылка_на_телеграм'); ?>"
                             data-telegram-post="pokrovadv/7184" data-width="100%"></script>
                     </div>
                 </div>
