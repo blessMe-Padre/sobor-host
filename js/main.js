@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
         initCalendar();
     }
 
-    // baguetteBox.run('.gallery-wrapper');
+    baguetteBox.run('.gallery-wrapper');
 
     // DOMContentLoaded
     // Canvas film grain by Szenia Zadvornykh https://codepen.io/zadvorsky/pen/PwyoMm?editors=0100

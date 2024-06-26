@@ -22,7 +22,7 @@ add_theme_support('post-thumbnails', array('post', 'events', 'news'));
 function theme_add_scripts()
 {
     // подключаем файл baguetteBox.css
-    // wp_enqueue_style('baguetteBox-css', get_template_directory_uri() . '/css/baguetteBox.min.css');
+    wp_enqueue_style('baguetteBox-css', get_template_directory_uri() . '/css/baguetteBox.min.css');
 
     // подключаем файл animate.css
     wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.css');
@@ -38,6 +38,9 @@ function theme_add_scripts()
     // подключаем js файл swiper-bundle.min.js
     wp_enqueue_script('swiper', get_template_directory_uri() .
         '/js/swiper-bundle.min.js', false, null, 'footer');
+    // подключаем js файл baguettebox.js
+    wp_enqueue_script('baguettebox', get_template_directory_uri() .
+        '/js/baguettebox.js', false, null, 'footer');
 
     // подключаем js файл swiper-bundle.min.js
     wp_enqueue_script('wow', get_template_directory_uri() .
