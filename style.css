@@ -2636,8 +2636,10 @@ body {
 
 .gallery-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 20px;
+    padding: 40px 0;
 }
 
 .gallery-wrapper a {
@@ -2656,8 +2658,6 @@ body {
     background-color: rgba(0, 0, 0, .5);
     z-index: 1;
 }
-
-
 
 .gallery-wrapper a::after {
     content: '';
