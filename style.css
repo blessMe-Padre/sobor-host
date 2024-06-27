@@ -2785,3 +2785,16 @@ body {
 .rite-content-name-list {
     list-style: decimal;
 }
+
+@media (max-width: 768px) {
+    .treba__wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 0;
+    }
+
+    .treba p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
