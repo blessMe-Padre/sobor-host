@@ -14,7 +14,7 @@
 
 <body class="lock-before">
     <div class="h-screen grid grid-rows-[auto_1fr_auto]">
-        <header class="z-20 w-fullbg-white">
+        <header class="z-20 w-fullbg-white" style="background-color: black;">
             <div class="container flex gap-1 xs:gap-5 items-center justify-between py-5">
                 <button class="btn-close-menu md:hidden">
                     <svg viewBox="0 0 64 48">

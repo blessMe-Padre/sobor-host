@@ -7,6 +7,8 @@ import { initScroll } from "./module/scroll.js";
 import { initCalendar } from "./module/calendar.js";
 import { initAnimation } from "./module/animation.js";
 import { initMask } from "./module/phone-mask.js";
+import { initTabs } from "./module/tabs.js";
+import { initTreba } from "./module/treba.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -19,11 +21,12 @@ window.addEventListener('DOMContentLoaded', () => {
     initScroll();
     initAnimation();
     initMask();
+    initTabs();
+    initTreba();
 
     if (document.querySelector('.calendar')) {
         initCalendar();
     }
-
     baguetteBox.run('.gallery-wrapper');
 
     // DOMContentLoaded

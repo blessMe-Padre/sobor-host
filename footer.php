@@ -1,4 +1,4 @@
-<footer class="footer relative z-50" data-scroll>
+<footer class="footer relative z-50" data-scroll style="background-color: black;">
     <h2 class="visually-hidden">Контакты</h2>
     <div class="container">
         <div class="footer__wrapper">
