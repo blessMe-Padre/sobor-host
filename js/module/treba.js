@@ -189,10 +189,18 @@ export const initTreba = () => {
     const trebaType = document.querySelector('#treba-select');
     const trebaSelect = document.querySelector('#treba-name-select');
     const contentSpan = document.querySelector('.rite-content-span');
+    const textArea = document.querySelector('#textarea-input');
 
     const imgTop = document.querySelector('.img-rite-top');
     const imgMiddle = document.querySelector('.rite__content');
     const imgBottom = document.querySelector('.img-rite-bottom');
+
+    const contentName = document.querySelector('.content-name');
+
+    const contentDays = document.querySelector('.content-days');
+    const daysInput = document.querySelector('#days-input');
+
+    const contentTotal = document.querySelector('.content-total');
 
     const createOptions = (data) => {
         data.map(item => {
@@ -226,5 +234,19 @@ export const initTreba = () => {
     // Подставляет название требу в поле контент
     trebaSelect.addEventListener('change', () => {
         contentSpan.textContent = trebaSelect.value;
+    });
+
+    contentDays.textContent = daysInput.value;
+    // Подставляет количество дней в поле контент
+    daysInput.addEventListener('input', () => {
+        contentDays.textContent = daysInput.value;
+    });
+
+    // Слушатель ввода в Текстовое поле с именами
+    textArea.addEventListener('input', () => {
+        let nameList = [];
+        let names = textArea.value.split(/[\n,]+/);
+        names = names.map(name => name.trim()).filter(name => name !== '');
+        nameList.push(...names);
     });
 }

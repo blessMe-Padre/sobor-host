@@ -2763,6 +2763,10 @@ body {
     background-image: url('./src/img/treba/middle_z.jpg');
     background-size: 100% auto;
     min-height: 232px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .rite__content.is-active {
@@ -2772,4 +2776,8 @@ body {
 .rite-content-span {
     text-align: center;
     font-weight: 600;
+}
+
+.rite__content-right {
+    text-align: right;
 }

@@ -35,11 +35,11 @@ get_header();
                             </div>
                             <div class="treba__item">
                                 <p>Количество дней:</p>
-                                <input name="days-count" type="number" value="1">
+                                <input name="days-count" id="days-input" min="0" type="number" value="1">
                             </div>
                             <div class="treba__item">
                                 <p>Имена (каждое с новой строки или через запятую):</p>
-                                <textarea name="text" id=""></textarea>
+                                <textarea name="text" id="textarea-input"></textarea>
                             </div>
                             <div class="treba__item">
                                 <p>Ваше имя:</p>
@@ -56,8 +56,15 @@ get_header();
                                 <img class="img-rite-top" src="<?php echo get_template_directory_uri() ?>/src/img/treba/top_z.jpg"
                                 alt="">
                                 <div class="rite__content">
-                                    <p class="rite-content-span"></p>
-                                    <ol></ol>
+                                    <div>
+                                        <p class="rite-content-span"></p>
+                                        <ol></ol>
+                                    </div>
+                                    <div class="rite__content-right">
+                                        <p>За одно имя: <span class="content-name">40</span>руб.</p>
+                                        <p>Количество дней: <span class="content-days">2</span></p>
+                                        <p>Итого: <span class="content-total">80</span>руб.</p>
+                                    </div>
                                 </div>
                                 <img class="img-rite-bottom" src="<?php echo get_template_directory_uri() ?>/src/img/treba/bottom_z.jpg"
                                 alt="">
