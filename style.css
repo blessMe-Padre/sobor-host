@@ -2781,3 +2781,7 @@ body {
 .rite__content-right {
     text-align: right;
 }
+
+.rite-content-name-list {
+    list-style: decimal;
+}

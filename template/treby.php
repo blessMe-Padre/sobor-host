@@ -58,10 +58,10 @@ get_header();
                                 <div class="rite__content">
                                     <div>
                                         <p class="rite-content-span"></p>
-                                        <ol></ol>
+                                        <ol class="rite-content-name-list"></ol>
                                     </div>
                                     <div class="rite__content-right">
-                                        <p>За одно имя: <span class="content-name">40</span>руб.</p>
+                                        <p>За одно имя: <span class="content-name-count">40</span>руб.</p>
                                         <p>Количество дней: <span class="content-days">2</span></p>
                                         <p>Итого: <span class="content-total">80</span>руб.</p>
                                     </div>

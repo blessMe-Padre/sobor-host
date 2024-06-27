@@ -187,7 +187,7 @@ export const initTreba = () => {
     ];
 
     const trebaType = document.querySelector('#treba-select');
-    const trebaSelect = document.querySelector('#treba-name-select');
+    const trebaName = document.querySelector('#treba-name-select');
     const contentSpan = document.querySelector('.rite-content-span');
     const textArea = document.querySelector('#textarea-input');
 
@@ -195,12 +195,13 @@ export const initTreba = () => {
     const imgMiddle = document.querySelector('.rite__content');
     const imgBottom = document.querySelector('.img-rite-bottom');
 
-    const contentName = document.querySelector('.content-name');
+    const contentNameCount = document.querySelector('.content-name-count');
+    const riteContentNameList = document.querySelector('.rite-content-name-list');
 
     const contentDays = document.querySelector('.content-days');
     const daysInput = document.querySelector('#days-input');
 
-    const contentTotal = document.querySelector('.content-total');
+    const contentTotalSpan = document.querySelector('.content-total');
 
     const createOptions = (data) => {
         data.map(item => {
@@ -208,7 +209,7 @@ export const initTreba = () => {
             option.value = item['name'];
             option.textContent = item['name'];
             option.setAttribute('data-cost', item['cost']);
-            trebaSelect.appendChild(option);
+            trebaName.appendChild(option);
         });
     };
 
@@ -219,11 +220,11 @@ export const initTreba = () => {
             imgTop.setAttribute('src', 'https://freelancer-vl.ru/wp-content/themes/sobor-inside/src/img/treba/top_u.jpg');
             imgMiddle.classList.add('is-active');
             imgBottom.setAttribute('src', 'https://freelancer-vl.ru/wp-content/themes/sobor-inside/src/img/treba/bottom_u.jpg');
-            trebaSelect.innerHTML = '';
+            trebaName.innerHTML = '';
             createOptions(trebaListU);
         }
         if (trebaType.value === 'value1') {
-            trebaSelect.innerHTML = '';
+            trebaName.innerHTML = '';
             imgTop.setAttribute('src', 'https://freelancer-vl.ru/wp-content/themes/sobor-inside/src/img/treba/top_z.jpg');
             imgMiddle.classList.remove('is-active');
             imgBottom.setAttribute('src', 'https://freelancer-vl.ru/wp-content/themes/sobor-inside/src/img/treba/bottom_z.jpg');
@@ -232,8 +233,8 @@ export const initTreba = () => {
     });
 
     // Подставляет название требу в поле контент
-    trebaSelect.addEventListener('change', () => {
-        contentSpan.textContent = trebaSelect.value;
+    trebaName.addEventListener('change', () => {
+        contentSpan.textContent = trebaName.value;
     });
 
     contentDays.textContent = daysInput.value;
@@ -244,9 +245,22 @@ export const initTreba = () => {
 
     // Слушатель ввода в Текстовое поле с именами
     textArea.addEventListener('input', () => {
+        riteContentNameList.innerHTML = '';
+
         let nameList = [];
         let names = textArea.value.split(/[\n,]+/);
         names = names.map(name => name.trim()).filter(name => name !== '');
         nameList.push(...names);
+
+        nameList.map(item => {
+            let li = document.createElement("li");
+            li.textContent = item;
+            riteContentNameList.appendChild(li);
+        });
+
+        let nameCount = nameList.length;
+        let coastOfCurrentTreba = trebaName.options[trebaName.selectedIndex].getAttribute('data-cost');
+        contentNameCount.innerHTML = coastOfCurrentTreba;
+        contentTotalSpan.innerHTML = coastOfCurrentTreba * daysInput.value * nameCount;
     });
 }
