@@ -99,3 +99,23 @@ function create_post_type2()
         )
     );
 }
+
+add_action('admin_menu', 'remove_default_menus');
+
+function remove_default_menus()
+{
+    remove_menu_page('index.php');                  // Консоль
+    remove_menu_page('edit.php');                   // Записи
+    remove_menu_page('upload.php');                 // Медиафайлы
+    // remove_menu_page('edit.php?post_type=page');    // Страницы
+    remove_menu_page('edit-comments.php');          // Комментарии
+    remove_menu_page('themes.php');                 // Внешний вид
+    remove_menu_page('plugins.php');                // Плагины
+    remove_menu_page('users.php');                  // Пользователи
+    remove_menu_page('tools.php');                  // Инструменты 
+    remove_menu_page('options-general.php');        // Настройки
+    remove_menu_page('bvi');        // плагин для слабовидящих
+    remove_menu_page('wpcf7');   // Contact form 7
+    // remove_menu_page('aiowpsec');   // wp security
+    remove_menu_page('edit.php?post_type=acf-field-group');   // ACF Field Group
+}

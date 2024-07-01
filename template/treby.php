@@ -5,17 +5,18 @@ Template Name: Требы
 get_header();
 ?>
 
-<main style="background-color: black;">
+<!-- <main style="background-color: black;"> -->
+<main>
     <div class="container">
-        <h1 class="title mtb-40px">В разработке...</h1>
+        <h1 class="title mtb-40px">Заказать требу</h1>
         <section class="treba-section relative z-19">
             <!-- <h1 class="title mtb-40px">Покровский Кафедральный Собор г.Владивостока. Заказ требы</h1> -->
 
             <div class="_tabs">
-                <nav class="treba__nav">
+                <!-- <nav class="treba__nav">
                     <button class="treba__btn _tabs-item _active" data-tab="#tab1">Заказать требу</button>
                     <button class="treba__btn _tabs-item" data-tab="#tab2">Поставить свечку</button>
-                </nav>
+                </nav> -->
 
                 <div class="_tabs-block _active" id="tab1">
                 <form class="main-treba-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
@@ -52,7 +53,7 @@ get_header();
                                 <input class="_req" type="email" name="email" id="" required>
                             </div>
 
-                            <input class="treba__btn" type="submit" value="Оплатить">
+                            <input class="treba__btn" type="submit" value="Отправить">
                         </div>
 
                         <div class="rite">
