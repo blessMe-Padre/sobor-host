@@ -2798,3 +2798,7 @@ body {
         font-weight: 600;
     }
 }
+
+._req._error {
+    border: 2px solid red;
+}

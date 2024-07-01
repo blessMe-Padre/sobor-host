@@ -202,6 +202,7 @@ export const initTreba = () => {
     const daysInput = document.querySelector('#days-input');
 
     const contentTotalSpan = document.querySelector('.content-total');
+    const totalInput = document.querySelector('#total-sum');
 
     const createOptions = (data) => {
         data.map(item => {
@@ -262,5 +263,39 @@ export const initTreba = () => {
         let coastOfCurrentTreba = trebaName.options[trebaName.selectedIndex].getAttribute('data-cost');
         contentNameCount.innerHTML = coastOfCurrentTreba;
         contentTotalSpan.innerHTML = coastOfCurrentTreba * daysInput.value * nameCount;
+        totalInput.value = coastOfCurrentTreba * daysInput.value * nameCount;
     });
+
+
+    // слушатель отправки формы 
+    const form = document.querySelector('.main-treba-form');
+    if (form) {
+        form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+
+            // валидация полей формы
+            const inputs = form.querySelectorAll('input, textarea');
+            let isValid = true;
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    input.classList.add('_error');
+                    input.value = 'Заполните поле';
+                    isValid = false;
+                } else {
+                    input.classList.remove('_error');
+                }
+            });
+
+            if (trebaName.value === 'Услуга не выбрана') {
+                trebaName.classList.add('_error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                form.submit();
+                alert('Данные успешно отправлены');
+            }
+        });
+    }
+
 }

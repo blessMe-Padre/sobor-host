@@ -9,7 +9,7 @@ get_header();
     <div class="container">
         <h1 class="title mtb-40px">В разработке...</h1>
         <section class="treba-section relative z-19">
-            <h1 class="title mtb-40px">Покровский Кафедральный Собор г.Владивостока. Заказ требы</h1>
+            <!-- <h1 class="title mtb-40px">Покровский Кафедральный Собор г.Владивостока. Заказ требы</h1> -->
 
             <div class="_tabs">
                 <nav class="treba__nav">
@@ -18,37 +18,41 @@ get_header();
                 </nav>
 
                 <div class="_tabs-block _active" id="tab1">
+                <form class="main-treba-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
+                    <input type="hidden" name="action" value="submit_form">
                     <div class="treba__wrapper">
                         <div class="treba">
                             <div class="treba__item">
                                 <p>Тип требы:</p>
-                                <select name="treba-select" id="treba-select">
+                                <select name="treba-select" id="treba-select" required>
                                     <option value="value1" selected>О здравии</option>
                                     <option value="value2">Об упокоении</option>
                                 </select>
                             </div>
                             <div class="treba__item">
                                 <p>Название требы:</p>
-                                <select name="treba-name-select" id="treba-name-select">
-                                    <option value="value1" selected disabled style="display:none">Выберите требу</option>
+                                <select  class="_req" name="treba-name-select" id="treba-name-select" required>
+                                    <option value="Услуга не выбрана" selected disabled style="display:none">Выберите требу</option>
                                 </select>
                             </div>
                             <div class="treba__item">
                                 <p>Количество дней:</p>
-                                <input name="days-count" id="days-input" min="0" type="number" value="1">
+                                <input  class="_req" name="days-count" id="days-input" min="0" type="number" value="1" required>
                             </div>
                             <div class="treba__item">
                                 <p>Имена (каждое с новой строки или через запятую):</p>
-                                <textarea name="text" id="textarea-input"></textarea>
+                                <textarea  class="_req" name="text" id="textarea-input" required></textarea>
                             </div>
                             <div class="treba__item">
                                 <p>Ваше имя:</p>
-                                <input name="name" type="text">
+                                <input class="_req" name="name" type="text">
                             </div>
                             <div class="treba__item">
                                 <p>Ваша электронная почта:</p>
-                                <input type="email" name="email" id="">
+                                <input class="_req" type="email" name="email" id="" required>
                             </div>
+
+                            <input class="treba__btn" type="submit" value="Оплатить">
                         </div>
 
                         <div class="rite">
@@ -61,15 +65,17 @@ get_header();
                                         <ol class="rite-content-name-list"></ol>
                                     </div>
                                     <div class="rite__content-right">
-                                        <p>За одно имя: <span class="content-name-count">40</span>руб.</p>
-                                        <p>Количество дней: <span class="content-days">2</span></p>
-                                        <p>Итого: <span class="content-total">80</span>руб.</p>
+                                        <p>За одно имя: <span class="content-name-count"></span>руб.</p>
+                                        <p>Количество дней: <span class="content-days"></span></p>
+                                        <p>Итого: <span class="content-total"></span>руб.</p>
                                     </div>
                                 </div>
                                 <img class="img-rite-bottom" src="<?php echo get_template_directory_uri() ?>/src/img/treba/bottom_z.jpg"
                                 alt="">
                             </div>
                         </div>
+                        <input id="total-sum" type="hidden" name="total-sum" value="">
+                    </form>
                     </div>
                 </div>
                 <div class="_tabs-block" id="tab2">
