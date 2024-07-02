@@ -243,6 +243,7 @@ export const initCalendar = () => {
                     throw new Error('Ошибка ' + response.statusText);
                 }
                 const html = await response.text();
+                console.log(html);
                 return html;
 
             } catch (error) {
@@ -256,19 +257,28 @@ export const initCalendar = () => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlString, 'text/html');
             const quoteDiv = doc.querySelector('.quote-of-day p');
-            let quoteContent = quoteDiv.innerText;
-            return quoteContent;
+            if (quoteDiv) {
+                let quoteContent = quoteDiv.innerText;
+                return quoteContent;
+            } else {
+                return 'Признаком сознания своих грехов и покаяния в них является неосуждение ближних.';
+            }
         }
 
         function extractShadow(htmlString) {
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlString, 'text/html');
             const quoteDiv = doc.querySelector('.shadow');
-            let quoteHtml = quoteDiv.innerHTML;
-            const cleanText = quoteHtml.replace(/<br\s*\/?>/gi, ' ')
-                .replace(/<[^>]+>/g, '')
-                .replace(/&nbsp;/g, ' ');
-            return cleanText;
+            if (quoteDiv) {
+                let quoteHtml = quoteDiv.innerHTML;
+                const cleanText = quoteHtml.replace(/<br\s*\/?>/gi, ' ')
+                    .replace(/<[^>]+>/g, '')
+                    .replace(/&nbsp;/g, ' ');
+                return cleanText;
+            } else {
+                return '';
+            }
+
         }
 
         // Цитата дня имя

@@ -1376,6 +1376,7 @@ thead td {
     font-size: 18px;
     color: #dbba61;
     margin-bottom: 30px;
+    min-height: 20px;
 }
 
 .quote-name {
@@ -1398,12 +1399,13 @@ thead td {
 }
 
 .holiday-shadow {
-    margin-top: -20px;
+    margin-top: -30px;
     font-family: "Onest", sans-serif;
     font-weight: 700;
     font-size: 24px;
     text-transform: uppercase;
     color: #303030;
+    min-height: 20px;
 }
 
 @media (max-width: 960px) {
