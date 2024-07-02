@@ -28,7 +28,7 @@ function theme_add_scripts()
     wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.css');
 
     // подключаем основной файл стилей темы
-    wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.1');
+    wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.3');
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ function theme_add_scripts()
     wp_enqueue_script('wow', get_template_directory_uri() .
         '/js/wow.js', false, null, 'footer');
 
-    wp_enqueue_script_module('main', get_template_directory_uri() . '/js/main.js', array(), '0.0.12');
+    wp_enqueue_script_module('main', get_template_directory_uri() . '/js/main.js', array(), '0.0.13');
 }
 
 function add_menu()

@@ -22,10 +22,12 @@ window.addEventListener('DOMContentLoaded', () => {
     initAnimation();
     initMask();
     initTabs();
-    initTreba();
 
     if (document.querySelector('.calendar')) {
         initCalendar();
+    }
+    if (document.querySelector('.treba-section')) {
+        initTreba();
     }
     baguetteBox.run('.gallery-wrapper');
 
