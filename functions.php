@@ -28,7 +28,7 @@ function theme_add_scripts()
     wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.css');
 
     // подключаем основной файл стилей темы
-    wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.4');
+    wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.5');
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
