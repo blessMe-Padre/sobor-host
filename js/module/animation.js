@@ -42,7 +42,7 @@ export const initAnimation = () => {
 
     if (animateElement2) {
         document.addEventListener('scroll', function () {
-            const section = document.querySelector('.animate-section-2'); // Получаем секцию, внутри которой будет происходить анимация
+            const section = document.querySelector('.animate-section-22'); // Получаем секцию, внутри которой будет происходить анимация
             const sectionRect = section.getBoundingClientRect(); // Получаем размеры и положение секции относительно окна
             const windowHeight = window.innerHeight || document.documentElement.clientHeight; // Получаем высоту окна браузера
 

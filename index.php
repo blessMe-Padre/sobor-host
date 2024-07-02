@@ -32,16 +32,16 @@ get_header();
                         setup_postdata($post);
                         ?>
 
-                <li class="swiper-slide hero__item">
-                <?php the_post_thumbnail(''); ?>
-                <div class="hero__block">
-                <p class="text-light-gray mb-3"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
-                <h2 class="title mb-5 wow fadeInUp"><?php the_title(); ?></h2>
-                <div class="mb-6 hero__text wow fadeInDown" data-wow-delay="1s"><?php the_excerpt(); ?></div>
-                <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
-                </div>
-                </li>
-                <?php
+                        <li class="swiper-slide hero__item">
+                        <?php the_post_thumbnail(''); ?>
+                        <div class="hero__block">
+                        <p class="text-light-gray mb-3"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
+                        <h2 class="title mb-5 wow fadeInUp"><?php the_title(); ?></h2>
+                        <div class="mb-6 hero__text wow fadeInDown" data-wow-delay="1s"><?php the_excerpt(); ?></div>
+                        <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
+                        </div>
+                        </li>
+                        <?php
                     }
                     wp_reset_postdata();
                     ?>
@@ -54,7 +54,7 @@ get_header();
     <div class="decor-section bg-light-brown"></div>
 
 
-    <div class=" animate-section-2 relative bg-light-brown overflow-hidden">
+    <div class="animate-section-22 relative bg-light-brown overflow-hidden">
         <div class="container overflow-hidden">
             <section class="news bg-light-brown overflow-hidden">
                 <div class="news__header">
@@ -96,18 +96,18 @@ get_header();
                             $count = $count + 0.5;
                             ?>
 
-                                <li class="swiper-slide news__item wow fadeIn" data-wow-delay="<?php echo $count; ?>s">
-                                    <div>
-                                    <div class="image-wrapper mb-5">
-                                    <?php the_post_thumbnail(''); ?>
-                                    </div>
-                                    <p class="mb-5 text-light-gray"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
-                                    <h3><?php the_title(); ?></h3>
-                                    <div class="news__description"><?php the_excerpt(); ?></div>
-                                    </div>
-                                    <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
-                                    </li>
-                                    <?php
+                                        <li class="swiper-slide news__item wow fadeIn" data-wow-delay="<?php echo $count; ?>s">
+                                            <div>
+                                            <div class="image-wrapper mb-5">
+                                            <?php the_post_thumbnail(''); ?>
+                                            </div>
+                                            <p class="mb-5 text-light-gray"><?php echo date_i18n('j F Y года', strtotime(get_the_date())); ?></p>
+                                            <h3><?php the_title(); ?></h3>
+                                            <div class="news__description"><?php the_excerpt(); ?></div>
+                                            </div>
+                                            <a class="text-orange underline" href="<?php the_permalink(); ?>">Читать</a>
+                                            </li>
+                                            <?php
                         }
                         wp_reset_postdata();
                         ?>
