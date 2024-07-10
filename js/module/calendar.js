@@ -243,7 +243,6 @@ export const initCalendar = () => {
                     throw new Error('Ошибка ' + response.statusText);
                 }
                 const html = await response.text();
-                console.log(html);
                 return html;
 
             } catch (error) {
@@ -321,15 +320,35 @@ export const initCalendar = () => {
             return titleArrays;
         }
         // Контент
-        function extractTitle(htmlString) {
+        function extractContent(htmlString) {
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlString, 'text/html');
-            const titleDiv = doc.querySelector('.main-block > p:nth-child(2)');
-            const links = titleDiv.querySelectorAll('a');
+            console.log(doc);
+            const contentDiv = doc.querySelector('.main-block > p:nth-child(2)');
+            const contentDiv3 = doc.querySelector('.main-block > p:nth-child(3)');
+            const contentDiv4 = doc.querySelector('.main-block > p:nth-child(4)');
+
+            const links = contentDiv.querySelectorAll('a');
+            const links3 = contentDiv3.querySelectorAll('a');
+
             let ContentArrays = [];
+
             links.forEach(link => {
                 ContentArrays.push(link.innerText);
             });
+
+            if (links3) {
+                links3.forEach(link => {
+                    ContentArrays.push(link.innerText);
+                });
+            }
+
+            if (contentDiv4) {
+                const links4 = contentDiv4.querySelectorAll('a');
+                links4.forEach(link => {
+                    ContentArrays.push(link.innerText);
+                });
+            }
             return ContentArrays;
         }
         // Вызов функций и отрисовка DOM элементов  ==========================================================
@@ -377,13 +396,15 @@ export const initCalendar = () => {
         });
 
         fetchData(date).then(data => {
-            const cleanTitle = extractTitle(data.presentations);
-            const daysTitle = document.querySelector('.holiday-content');
+            const cleanTitle = extractContent(data.presentations);
+            const daysContent = document.querySelector('.holiday-content');
 
+            // очищает список daysContent 
+            removeAllChildren(daysContent);
             cleanTitle.forEach(item => {
                 let li = document.createElement('li');
                 li.innerText = item;
-                daysTitle.appendChild(li);
+                daysContent.appendChild(li);
             });
         });
     }

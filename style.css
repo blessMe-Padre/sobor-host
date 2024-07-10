@@ -1438,10 +1438,6 @@ thead td {
         max-height: 153px;
     }
 
-    .holiday-titles li {
-        font-size: 14px;
-    }
-
     .holiday-shadow {
         margin-top: -30px;
         margin-bottom: -20px;
@@ -2803,4 +2799,56 @@ body {
 
 ._req._error {
     border: 2px solid red;
+}
+
+.header__nav ul li {
+    position: relative;
+}
+
+.sub-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    z-index: 5;
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+    text-transform: lowercase;
+    display: flex;
+    flex-direction: column !important;
+    align-items: start !important;
+    gap: 5px !important;
+    padding: 20px 10px 20px 30px;
+    box-shadow: 0 0 40px 0 rgba(73, 91, 121, .2);
+    background: #fff;
+}
+
+.header__nav li:hover>.sub-menu {
+    transform: rotateX(0);
+    opacity: 1;
+    visibility: visible;
+    background-color: #fff;
+    color: #000;
+}
+
+.accordion-arrow {
+    position: relative;
+}
+
+.accordion-arrow:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    background-image: url(//dezprim.ru/nhk/wp-content/themes/kgbus/./src/img/icons/arrow-up.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }

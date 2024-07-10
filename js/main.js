@@ -9,6 +9,7 @@ import { initAnimation } from "./module/animation.js";
 import { initMask } from "./module/phone-mask.js";
 import { initTabs } from "./module/tabs.js";
 import { initTreba } from "./module/treba.js";
+import { initArrowClass } from "./module/arrow-class-menu.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initAnimation();
     initMask();
     initTabs();
+    initArrowClass();
 
     if (document.querySelector('.calendar')) {
         initCalendar();

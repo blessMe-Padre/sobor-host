@@ -35,16 +35,16 @@
                 <div class="flex items-center justify-center gap-7">
                     <a class="text-xs md:text-lg font-bold link" href="tel:+74232402628">8 (423) 2-40-26-28</a>
                     <div class="hidden xs:flex items-center gap-3">
-                        <a class="social-icon" href="http://t.me/pokrovadv/37" target="_blank"
+                        <a class="social-icon" href="https://t.me/s/pokrovadv" target="_blank"
                             rel="noopener noreferrer">
                             <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/telegram.svg" width="22"
                                 height="22" alt="телеграм">
                         </a>
-                        <a class="social-icon" href="https://vk.com/pokrovadv" target="_blank"
+                        <!-- <a class="social-icon" href="https://vk.com/pokrovadv" target="_blank"
                             rel="noopener noreferrer">
                             <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/vk.svg" width="24"
                                 height="24" alt="вконтакте">
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -82,11 +82,11 @@
                             <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/telegram.svg" width="22"
                                 height="22" alt="телеграм">
                         </a>
-                        <a class="social-icon" href="https://vk.com/pokrovadv" target="_blank"
+                        <!-- <a class="social-icon" href="https://vk.com/pokrovadv" target="_blank"
                             rel="noopener noreferrer">
                             <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/vk.svg" width="24"
                                 height="24" alt="вконтакте">
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
