@@ -9,7 +9,7 @@ export const initTreba = () => {
 
         {
             name: 'Молебен',
-            cost: 20,
+            cost: 30,
         },
         {
             name: 'Сугубый молебен: В узах сидящих',
@@ -93,11 +93,15 @@ export const initTreba = () => {
         },
         {
             name: 'Обедня',
-            cost: 30,
+            cost: 40,
         },
         {
             name: 'Проскомидия',
-            cost: 20,
+            cost: 30,
+        },
+        {
+            name: 'Панихида',
+            cost: 50,
         },
         {
             name: 'Родительская суббота, Радоница',
@@ -125,7 +129,7 @@ export const initTreba = () => {
         },
         {
             name: 'Сорокоуст',
-            cost: 500,
+            cost: 600,
         },
         {
             name: 'Свеча в алтарь',

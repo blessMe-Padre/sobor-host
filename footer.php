@@ -31,14 +31,14 @@
                 </div>
 
                 <div class="flex items-center gap-5">
-                    <a class="social-icon" href="http://t.me/pokrovadv/37" target="_blank" rel="noopener noreferrer">
+                    <a class="social-icon" href="https://t.me/s/pokrovadv" target="_blank" rel="noopener noreferrer">
                         <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/telegram.svg" width="22"
                             height="22" alt="телеграм">
                     </a>
-                    <a class="social-icon" href="https://vk.com/pokrovadv" target="_blank" rel="noopener noreferrer">
+                    <!-- <a class="social-icon" href="https://vk.com/pokrovadv" target="_blank" rel="noopener noreferrer">
                         <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/vk.svg" width="24"
                             height="24" alt="вконтакте">
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
