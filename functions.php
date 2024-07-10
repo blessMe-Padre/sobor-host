@@ -28,7 +28,7 @@ function theme_add_scripts()
     wp_enqueue_style('animate-css', get_template_directory_uri() . '/css/animate.css');
 
     // подключаем основной файл стилей темы
-    wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.5');
+    wp_enqueue_style('style', get_stylesheet_uri(), '', '1.0.8');
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -110,7 +110,7 @@ function remove_default_menus()
     // remove_menu_page('edit.php?post_type=page');    // Страницы
     remove_menu_page('edit-comments.php');          // Комментарии
     // remove_menu_page('themes.php');                 // Внешний вид
-    remove_menu_page('plugins.php');                // Плагины
+    // remove_menu_page('plugins.php');                // Плагины
     remove_menu_page('users.php');                  // Пользователи
     remove_menu_page('tools.php');                  // Инструменты 
     remove_menu_page('options-general.php');        // Настройки
